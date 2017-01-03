@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encapsulation", "..\..\Encapsulation\Encapsulation.csproj", "{0F38BB5E-3092-4679-B516-50B68B587EB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sec1-Encapsulation", "..\..\Encapsulation\Sec1-Encapsulation.csproj", "{0F38BB5E-3092-4679-B516-50B68B587EB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sec4-Abstraction", "..\..\Sec4-Abstraction\Sec4-Abstraction.csproj", "{DF4B9E96-B692-4066-879D-3C8B26C099AC}"
 EndProject
