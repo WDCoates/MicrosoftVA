@@ -8,5 +8,15 @@ namespace Sec4_Abstraction
 {
     public abstract class Ab1class
     {
+        private string name;
+
+        abstract public string getName();
+
+        public void setName(string name)
+        {
+            this.name = name;
+            return;
+        }
+
     }
 }
