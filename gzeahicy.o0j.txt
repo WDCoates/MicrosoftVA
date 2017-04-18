@@ -1,0 +1,10 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Section4
+# Your branch is up-to-date with 'origin/Section4'.
+#
+# Changes to be committed:
+#	new file:   Solution/HTML5 CSS3 and JavaScript/HTML5 CSS3 and JavaScript.sln
+#
+
