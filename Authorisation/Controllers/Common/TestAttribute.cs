@@ -10,13 +10,19 @@ namespace Authorisation.Controllers
 
         public TestAttribute (params string[] Names)
         {
-            _name = "Test";
+            _name = Names[0].ToString();
         }
 
         public void OnAuthorization(AuthorizationContext filterContext)
         {
+            
             filterContext.Result = null;
             return;
+        }
+
+        public String GetName()
+        {
+            return this._name.ToString();
         }
     }
 }
