@@ -7,9 +7,11 @@
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
+    <script src="app/eventModule.js"></script>
+    <script src="app/mainApp.js"></script>
 </head>
-<body>
-    <div class="col-md-12" data-ng-app>
+<body data-ng-app="mainApp">
+    <div class="col-md-12" >
         <h1 class="col-md-offset-4">Hello World: 2 + 2 =  {{2 + 2}}</h1>
         <p>
             <div class="col-md-2">Enter hoby:</div><input type="text" data-ng-model="hoby" />
@@ -17,9 +19,16 @@
         <p>
             You Like:&nbsp;{{hoby}}
         </p>
+        <p>
+            {{"Test :" + hoby}}
+        </p>
         <footer>
 
         </footer>
+    </div>
+
+    <div>
+        {{"No Way... "}}
     </div>
     <script type="text/javascript">
         console.log("Something....");

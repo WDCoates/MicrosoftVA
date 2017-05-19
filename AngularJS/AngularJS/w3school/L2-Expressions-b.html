@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+</head>
+<body ng-app>
+    <div ng-init="thing='Wids';Qty=33;Price=12.99">
+        Qty:{{Qty}}<br />
+        Price:{{Price}}<br />
+
+        <p>{{'Total Cost of ' + thing +': '}}<span ng-bind="Qty * Price"></span></p>
+
+        <hr />
+        <div ng-init="cus={lName:'Evans', address:'1 The Street, London.'}">
+            <p>Customer : {{cus.lName}}</p>
+            <p>Address :<span ng-bind="cus.address + ' Qty:'+ Qty"></span></p>
+        </div>
+        <hr />
+        <p>Arrays</p>
+        <div ng-init="points=[1,2,4,8,16,32,64,128]">
+            <p>Last Point is {{points[points.length - 1]}}</p>
+            <p>Number of points is: {{points.length}}</p>
+        </div>
+    </div>
+</body>
+</html>

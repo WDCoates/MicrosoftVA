@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+
+        app.controller('controller', function ($scope) {
+
+            $scope.bgColor = "yellow";
+            $scope.styleObject = { "background": "yellow" };
+        });
+    </script>
+</head>
+<body>
+    <!--<div ng-app="" ng-init="nyRed='lightBlue'">
+        <input style="background-color:{{nyRed}}" ng-model="nyRed" value="{{nyRed}}" />
+    </div>-->
+    <!--<div ng-app="" ng-init="myCol='Red'">
+
+        <input ng-model="myCol" ng-attr-style="{{'background-color:' + myCol}}" value="{{myCol}}">
+
+    </div>-->
+
+    <div ng-app="app">
+        <div ng-controller="controller">
+
+            <div style="background:{{bgColor}}">
+                This will NOT get colored in IE
+            </div>
+
+            <div style="{{styleObject}}">
+                Nor will this.....
+            </div>
+
+            <div ng-attr-style="background:{{bgColor}}">
+                But this WILL get colored in IE
+            </div>
+
+            <div ng-style="styleObject">
+                And so is this... as this uses a json object and gives that to ng-style
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

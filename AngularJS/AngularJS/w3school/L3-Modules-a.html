@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script>
+        var mod = angular.module("thisDC1", [])
+            .config([function () {
+                /**/
+                console.log("Config fun!");
+            }])
+            .run([function () {
+                /**/
+                console.log("And Run Fun!");
+            }])
+            .controller("dc1Ctrl", function ($scope) {
+                $scope.Name = "Dave";
+            })
+            .directive("dc1Test1", function () {
+            return {
+                template: "I was made in a directive constructor!"
+            };
+        });
+        ;
+
+
+        mod.directive("dc1Test", function () {
+            return {
+                template : "No way this will work first time!"
+            };
+        });
+
+        
+    </script>
+
+</head>
+<body ng-app="thisDC1">
+    <div dc1-Test ></div>   <!--You need to add the - remeber camelcase add hyphens -->
+
+    <div dc1-test1></div>
+
+    <div ng-controller="dc1Ctrl">
+        Check the log....
+        <p>{{Name}}</p>
+    </div>
+    <div dc1Test></div>
+
+</body>
+</html>
