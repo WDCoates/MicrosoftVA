@@ -19,27 +19,36 @@
             }])
             .controller("dc1Ctrl", function ($scope) {
                 $scope.Name = "Dave";
+
+                var Studs = [{ name: "Dave", rank: 1 },
+                    { name: "Elen", rank: 7 },
+                    { name: "Frank", rank: 2 },
+                    { name: "Goose", rank: 10 }
+                ];
+
+                $scope.students = Studs;
+
             })
             .directive("dc1Test1", function () {
-            return {
-                template: "I was made in a directive constructor!"
-            };
-        });
+                return {
+                    template: "I was made in a directive constructor!"
+                };
+            });
         ;
 
 
         mod.directive("dc1Test", function () {
             return {
-                template : "No way this will work first time!"
+                template: "No way this will work first time!"
             };
         });
 
-        
+
     </script>
 
 </head>
 <body ng-app="thisDC1">
-    <div dc1-Test ></div>   <!--You need to add the - remeber camelcase add hyphens -->
+    <div dc1-Test></div>   <!--You need to add the - remeber camelcase add hyphens -->
 
     <div dc1-test1></div>
 
@@ -48,6 +57,14 @@
         <p>{{Name}}</p>
     </div>
     <div dc1Test></div>
-
+    <hr />
+    Name and Rank
+    <div ng-controller="dc1Ctrl">
+        <ol>
+            <li ng-repeat="sds in students">
+                {{sds.name}} - {{sds.rank}}
+            </li>
+        </ol>
+    </div>
 </body>
 </html>

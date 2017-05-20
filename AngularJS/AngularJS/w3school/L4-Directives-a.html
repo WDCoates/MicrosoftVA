@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+</head>
+<!-- ng-app and ng-itit and ng-model are all directives -->
+<body>
+    <h1>Directives</h1>
+    <hr />
+    <div ng-app="" ng-init="firstName='Dave'; names=['Jani','Hege','Kai']">
+        <p>Name: <input type="text" ng-model="firstName" /></p>
+        <p>You wrote: {{ firstName }}</p>
+        <hr />
+        Quantity: <input type="number" ng-model="qty" />
+        Unit Price: <input type="number" ng-model="Price" />
+        <p></p>
+        Totla Cost: {{qty * Price}}
+        <p></p>
+        <hr />
+        <ul>
+            <li ng-repeat="n in names">
+                {{n}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
