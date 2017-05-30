@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module('dApp', []);
+        app.controller('dCtrl', function ($scope) {
+            $scope.name = "Dave";
+        });
+    </script>
+</head>
+<body>
+    <h1>Model</h1>
+    <div ng-app="dApp" ng-controller="dCtrl">
+        <input ng-model="name" />
+        Name: <input type="text" ng-model="name" />
+        <p>You are entering: {{name}}</p>
+        <hr />
+    </div>
+</body>
+</html>

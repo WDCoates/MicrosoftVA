@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+</head>
+<body>
+    <h1>Model - Forms</h1>
+    <form ng-app="" name="form1">
+        Email: <input type="email" name="eMail1" ng-model="text" />
+        <span ng-show="form1.eMail.$error.email">Not a valid e-mail address!</span>
+    </form>
+</body>
+</html>

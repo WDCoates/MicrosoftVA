@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .yellow {background-color:yellow}
+    </style>
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script>
+        var dApp = angular.module("dApp", []);
+        dApp.directive("dTestDir1", function () {
+            return {
+                template: "<H4>Template Directive I guess</H4>"
+            };
+        });
+
+        /*Not quite right!*/
+        dApp.directive("tBtn", function () {
+            return {
+                restrict: "C",
+                template: "<div class=\"btn yellow\"> Test a Button</div>"
+            };
+        });
+
+        dApp.directive("dCommDir1", function() {
+            return {
+                restrict : "M",
+                replace : true,
+                template : "<h1>Made by a restricted replace directive !</h1>"
+            };
+        });
+    </script>
+</head>
+<body ng-app="dApp">
+    <h1 style="background-color:blue">Directives:</h1>
+    <hr />
+    <!-- directive: d-comm-dir1 -->
+    <d-test-dir1>;</d-test-dir1>
+    <hr />
+
+    <div class="t-btn" ></div>
+
+</body>
+</html>
