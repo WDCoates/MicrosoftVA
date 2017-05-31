@@ -7,12 +7,27 @@
     <script src="/Scripts/jquery-1.9.1.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
     <script src="/Scripts/angular.min.js"></script>
+    <style>
+        input.ng-invalid {
+            background-color:pink;
+        }
+        input.ng-touched {
+            background-color:greenyellow;
+        }
+    </style>
 </head>
 <body>
     <h1>Model - Forms</h1>
     <form ng-app="" name="form1">
-        Email: <input type="email" name="eMail1" ng-model="text" />
+        Priv Email: <input type="email" name="eMail" ng-model="pEmail"/>
         <span ng-show="form1.eMail.$error.email">Not a valid e-mail address!</span>
+        <br />
+        Work Email: <input type="email" name="eMail1" ng-model="wEmail" required/>        
+        <span ng-show="form1.eMail1.$error.email">Not a valid e-mail address!</span>
+        <br />
+        <p>
+            Status: {{form1.eMail1.$valid}};{{form1.eMail1.$dirty}};{{form1.eMail1.$touched}};
+        </p>
     </form>
 </body>
 </html>
