@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module('scopeApp', []);
+        app.run(function($rootScope) {
+            $rootScope.rootText = 'This is the Root!';
+            $rootScope.colour = 'Root White';
+        });
+
+        app.controller('scopeCont', function ($scope) {
+            $scope.colour = "Black";
+        });
+
+    </script>
+</head>
+<body ng-app="scopeApp">
+    At root scope.
+    {{rootText}}<br />
+    Root Colour: {{colour}}
+
+    <div ng-controller="scopeCont">
+
+        Scope Colour : {{colour}}
+
+    </div>
+
+</body>
+</html>

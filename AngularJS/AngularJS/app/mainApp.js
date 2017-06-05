@@ -10,4 +10,8 @@ var mainApp = angular.module('mainApp', [])
         /**/
         console.log(".run Fun!");
     }])
-    ;
+    
+    .run(function ($rootScope) {
+        $rootScope.rTest = " - More Run Fun!";
+    })
+;

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="L9-controller.js"></script>
+</head>
+<body ng-app="app" ng-controller="controller">
+    <h1>Looking At Filters</h1>
+    <p>
+        Price: {{Price}}<br />
+        Price with currency filter: {{Price | currency : "£" : 3 }}<br />
+    </p>
+    <p>
+        Upper Case: {{title | uppercase}}
+    </p>
+    <p>
+    Lower Case: {{title | lowercase}}
+    </p>
+    No Order:
+    <ul>
+        <li ng-repeat="n in names">
+            {{n.country + ', ' + n.name}}
+        </li>
+    </ul>
+    Order By Country:
+    <ul>
+        <li ng-repeat="n in names | orderBy:'country'">
+            {{n.country + ', ' + n.name}}
+        </li>
+    </ul>
+    Order By Name then Country:
+    <ul>
+    <li ng-repeat="n in names | orderBy:'name' | orderBy:'country'">
+        {{n.country + ', ' + n.name}}
+    </li>
+    </ul>
+    Order By Country then Name:
+    <ul>
+    <li ng-repeat="n in names | orderBy:'country' | orderBy:'name'">
+        {{n.country + ', ' + n.name}}
+    </li>
+    </ul>
+</body>
+</html>
