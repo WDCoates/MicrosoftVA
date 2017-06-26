@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="lApp" ng-controller="l1Controller">
+        Simple Select:
+        <select ng-model="selCountry1" ng-options="x.name for x in lcCountry"> 
+        </select><br />
+        Simple Selected country:- {{selCountry1.name}} :: Selected object:- {{selCountry1}}<br />
+        <p>
+        Not quite as simple...<select ng-model="selCountry2">
+            <option ng-repeat="x in lcCountry" value="{{$index +'-'+ x.Inter}}">{{x.name}}</option>
+            </select>
+            <br />
+            Selected ? {{selCountry2}}
+        </p>
+        <p>
+            <select ng-model="selCar" ng-options="x for (x, y) in carList">
+            </select>
+            You selected: <b>{{selCar}}</b>
+        </p>
+        <hr />
+        <p>
+            <select ng-model="selCarO" ng-options="b.brand for (a, b) in carCom"></select><br />
+            You selected: <b>{{selCarO}}</b><br />
+            Model: <b>{{selCarO.model}}</b><br />
+            Color: <b>{{selCarO.colour}}</b><br />
+        </p>
+    </div>
+
+
+    <script>
+        var lApp = angular.module("lApp", []);
+
+        lApp.controller('l1Controller', function ($scope, $http) {
+            $http.get("http://localhost:65248/api/countries").then(function (resp) {
+                $scope.lcCountry = resp.data;
+                //$scope.tasks = resp.!;
+            });
+
+            $scope.carList = { car0: "Alfa", car1: "Bently", car2: "Ford", car3: "Jag", car4: "Zonda" };
+
+            $scope.carCom = {
+                car01: { brand: "Ford", model: "Mustang", colour: "red" },
+                car02: { brand: "Fiat", model: "500", colour: "white" },
+                car03: { brand: "Volvo", model: "XC90", colour: "black" }
+            };
+        });
+    </script>
+    <style>
+        table, th, td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+            table tr:nth-child(odd) {
+                background-color: #f1f1f1;
+            }
+
+            table tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+    </style>
+</body>
+</html>

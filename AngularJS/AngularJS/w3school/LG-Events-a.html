@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="lApp" ng-controller="l1Controller" ng-init="aSwitch=true">
+        ng-events<br />
+        <p>
+            <button ng-mouseenter="e=e+1; messageSet($event, 'Something!')" ng-mouseleave="l=l+1; dispMsg = false;">Test Me!</button>
+        </p>
+        <div ng-show="dispMsg">{{message}}</div>
+    
+    
+        Enter count:{{e}};<br />
+        Leave count:{{l}};<br />
+        X:{{cX}}<br />
+        <br />
+
+    
+    </div>
+    <script>
+        var lApp = angular.module("lApp", []);
+
+        lApp.controller('l1Controller', function ($scope) {
+            $scope.dispMsg = false;
+
+            $scope.messageSet = function (eventObj, msg) {
+                console.log(eventObj);
+                $scope.message = msg;
+                $scope.dispMsg = true;
+                $scope.cX = eventObj.clientX;
+            };
+
+            
+        });
+    </script>
+</body>
+</html>

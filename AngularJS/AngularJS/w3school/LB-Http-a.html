@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="lbApp" ng-controller="lb1Controller">
+        <p>Todays message is:<b>{{lb1Msg}} </b>
+        </p>
+        <p>Status messgaes look like this...<br />
+        {{lb1Status}}
+        </p>
+        <p>
+            Errors look like this...<br />
+            {{lb1Status2}}
+            {{lb1ErrorText}}
+        </p>
+        <hr />
+            {{fMsg}}
+        <hr />
+        <p>
+            Now for some JSON stuff !!!!<br />
+            <ul>
+                <li ng-repeat="c in lb1Items">
+                    {{c.name}}
+                </li>
+            </ul>
+        </p>
+    </div>
+
+    <script>
+        var lbApp = angular.module("lbApp", []);
+
+        lbApp.controller('lb1Controller', function ($scope, $http) {
+            $http.get("Message.html")
+            .then(function (response) {
+                $scope.lb1Msg = response.data;
+                $scope.lb1Status = response.statusText;
+            });
+
+            $http({
+                method : "GET", url : "Message.crap"})
+            .then(function (response) {
+                $scope.lb1Status2 = response.statusText;
+            }, function (response) {
+                $scope.lb1ErrorText = response.statusText;
+            })
+            .finally(function () {
+                $scope.fMsg = "All Done";
+            });
+
+            $http.get("http://localhost:65248/api/countries").then(function (resp) {
+                $scope.lb1Items = resp.data;
+                //$scope.tasks = resp.!;
+            });
+
+        });
+    </script>
+</body>
+</html>

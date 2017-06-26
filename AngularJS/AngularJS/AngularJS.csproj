@@ -103,6 +103,7 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="w3school\app.js" />
+    <Content Include="w3school\LA-Controller.js" />
     <Content Include="w3school\L9-controller.js" />
     <Content Include="w3school\L7-Controllers-b-ext1.js" />
     <Content Include="w3school\L4-Directives-b.html" />
@@ -115,6 +116,14 @@
     <Content Include="w3school\L9-Filters-c.html" />
     <Content Include="w3school\L9-Filters-b.html" />
     <Content Include="w3school\L9-Filters-a.html" />
+    <Content Include="w3school\LA-Services-a.html" />
+    <Content Include="w3school\LG-Events-a.html" />
+    <Content Include="w3school\LF-DOM-a.html" />
+    <Content Include="w3school\LD-Select.html" />
+    <Content Include="w3school\LC-Tables-a.html" />
+    <Content Include="w3school\Message.html" />
+    <Content Include="w3school\Welcome.xml" />
+    <Content Include="w3school\LB-Http-a.html" />
     <Content Include="w3school\Z1-Template.html" />
     <Content Include="w3school\L4-Directives-a.html" />
     <Content Include="w3school\L3-Modules-b.html" />
