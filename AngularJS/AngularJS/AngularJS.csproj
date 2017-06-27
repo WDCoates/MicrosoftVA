@@ -117,6 +117,8 @@
     <Content Include="w3school\L9-Filters-b.html" />
     <Content Include="w3school\L9-Filters-a.html" />
     <Content Include="w3school\LA-Services-a.html" />
+    <Content Include="w3school\LI-Validation-Example.html" />
+    <Content Include="w3school\LI-Validation-a.html" />
     <Content Include="w3school\LG-Events-a.html" />
     <Content Include="w3school\LF-DOM-a.html" />
     <Content Include="w3school\LD-Select.html" />

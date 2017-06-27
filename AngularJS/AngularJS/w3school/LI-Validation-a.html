@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <style>
+        input.ng-touched {
+            background-color:lightpink;
+        }
+
+        input.ng-invalid {
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="lApp" ng-controller="l1Controller" ng-init="aSwitch=true">
+        <h1>Forms and Validation</h1>
+        <form name="aForm">
+            <input type="text" name="aName" ng-model="aName" required a-Name-Valid/>
+            <input type="text" name="bName" ng-model="bName" required />
+
+        </form>
+        <hr />
+        <p>Form Input:<br />
+        {{aName}}<div class="bg-danger">{{aForm.aName.$untouched}}</div>
+        {{bName}}<div class="bg-danger">{{aForm.bName.$pristine}}</div>
+        </p>
+    
+    </div>
+    <script>
+        var lApp = angular.module("lApp", []);
+        
+        lApp.directive('aNameValid', function () {
+            return {
+                require: 'ngModel',
+                link: function (scope, element, attr, mCtrl) {
+                    function aValidate(value) {
+                        if (value.length > 3) {
+                            mCtrl.$setValidity('lenLesThree', true);
+                        }
+                        else {
+                            mCtrl.$setValidity('lenLesThree', false);
+                        }
+                        return value;
+                    }
+
+                    mCtrl.$parsers.push(aValidate);
+                }
+            };
+        });
+
+        lApp.controller('l1Controller', function ($scope) {
+                        
+        });
+    </script>
+</body>
+</html>

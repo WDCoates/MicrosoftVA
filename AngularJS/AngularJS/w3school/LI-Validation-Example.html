@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <style>
+        input.ng-touched {
+            background-color:lightpink;
+        }
+
+        input.ng-invalid {
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Validation Example</h2>
+
+
+    <form ng-app="lApp" ng-controller="l1Controller" name="lForm" novalidate>
+        <p>Username:<br />
+        <input type="text" name="uName" ng-model="uName" required />
+        <span style="color:red" ng-show="lForm.uName.$dirty && lForm.uName.$invalid">
+            <span ng-show="lForm.uName.$error.required">Username is required.</span>
+        </span>
+        </p>
+
+        <p>Email:<br />
+        <input type="email" name="uEMail" ng-model="uEMail" required />
+            <span style="color:red" ng-show="lForm.uEMail.$dirty && lForm.uEMail.$invalid">
+                <span ng-show="lForm.uEMail.$error.required">An eMail is required.</span>
+                <span ng-show="lForm.uEMail.$error.email">Invalid eMail address.</span>
+            </span>
+        
+        </p>
+        <input type="submit" ng-disabled="lForm.uName.$dirty && lForm.uEMail.$invalid || lForm.uEMail.$dirty && lForm.uEMail.$invalid"/>
+    </form>
+
+    <!-- Scripts Below -->
+    <script>
+        var lApp = angular.module("lApp", []);
+
+        lApp.controller('l1Controller', function ($scope) {
+
+                        
+        });
+    </script>
+</body>
+</html>
