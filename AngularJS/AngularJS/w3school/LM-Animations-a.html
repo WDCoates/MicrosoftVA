@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-3.1.1.min.js"></script>
+
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-animate.min.js"></script>
+
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <style>
+        div {
+            transition: all linear 0.5s;
+            background-color: lightblue;
+            height: 100px;
+            width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .ng-hide {
+            height: 0;
+            width: 0;
+            background-color: transparent;
+            top: -200px;
+            left: 200px;
+        }
+
+        .ng-show {
+            transition: all linear 1.5s;
+            background-color: black;
+        }
+    </style>
+
+</head>
+<body ng-app="lApp" ng-controller="l1Controller">
+        <p>
+            <h1>Annimations!</h1>
+        </p>
+        <h3>Check to Hide...<input type="checkbox" ng-model="aHide"/></h3>
+
+        <div style="color:aqua" ng-hide="aHide">Can You See Me!</div>
+        <div ng-show="aHide">Well Well Well thre holes....</div>
+    <script>
+        var lApp = angular.module('lApp', ['ngAnimate']);
+        
+        lApp.controller('l1Controller', function ($scope) {                
+        });
+    </script>
+</body>
+</html>
