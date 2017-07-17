@@ -33,6 +33,25 @@
             transition: all linear 1.5s;
             background-color: black;
         }
+
+        @keyframes sChange {
+            from {
+                height: 50px;
+            }
+            to {
+                height: 0px;
+            }
+        }
+
+        .sDiv {
+            height: 50px;
+            background-color: lightgreen;
+        }
+
+        .sDiv.ng-hide {
+            animation: 1.5s sChange;
+        }
+
     </style>
 
 </head>
@@ -43,7 +62,12 @@
         <h3>Check to Hide...<input type="checkbox" ng-model="aHide"/></h3>
 
         <div style="color:aqua" ng-hide="aHide">Can You See Me!</div>
-        <div ng-show="aHide">Well Well Well thre holes....</div>
+        <div ng-show="aHide">Well Well Well three holes....</div>
+    <hr />
+    Hide the second DIV: <input type="checkbox" ng-model="sDiv" />
+    <div class="sDiv" ng-hide="sDiv">
+        Second Div....
+    </div>
     <script>
         var lApp = angular.module('lApp', ['ngAnimate']);
         
