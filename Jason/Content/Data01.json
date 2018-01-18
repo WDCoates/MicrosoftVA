@@ -1,0 +1,17 @@
+{
+	"name": "Sarah",
+  "private": true,
+  "likes":  ["Boots", "Leather", "cbt"],
+  "modes": [
+    {
+      "name": "Leather",
+      "where": [ "London", "Bath" ]
+    },
+    {
+      "name": "Boss",
+      "where": [ "London", "Bath" ]
+    }
+  ],
+
+  "Outfits": ["DomBitch","TopBoss","SchoolUniform"]
+}
